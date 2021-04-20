@@ -3,8 +3,8 @@
 
 ## About
 
-🌇 CLIPS is a series of GIF-casts with various CLI tips.
-🧰 At the same time it's a collection of tools/links and a few bash scrips helping me to create those GIF-casts.
+<p>🌇 CLIPS is a series of GIF-casts with various CLI tips.</p>
+<p>🧰 At the same time it's a collection of tools/links and a few bash scrips helping me to create those GIF-casts.</p>
 
 ## Usage
 
