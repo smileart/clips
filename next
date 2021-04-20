@@ -1,0 +1,82 @@
+#! /usr/bin/env bash
+if [ "$1" != "s" ]; then
+	export LINE=$((LINE + 1))
+	LINE_TEXT=$(sed -n "$LINE"p "$SCRIPT_PATH")
+else
+	[[ -n "$2" ]] && export SCENE=$(($2 - 1)) # Forcing SCENE number (to play from line)
+	[[ -n "$3" ]] && export LINE=$(($3 - 1))  # Forcing LINE shift (to rewind to the scene)
+fi
+
+function typing() {
+	cat | pv -qL $((15 + (-2 + RANDOM % 5)))
+}
+
+function trim() {
+	cat | sed 's/^ *//;s/ *$//'
+}
+
+function join_by { local d=$1; shift; local f=$1; shift; printf %s "$f" "${@/#/$d}"; }
+
+case "$1" in
+"") # Old-good echo
+	echo "$LINE_TEXT"
+	;;
+"_") # Typing Effect
+	echo "$LINE_TEXT" | trim | typing
+	;;
+"a") # Annotation (the separator is: ✂︎)
+	IFS='✂︎' read -rA segments <<<"$LINE_TEXT"
+	echo -n "${segments[1]}"
+	echo "${segments[3]}" | trim | typing
+	;;
+"b") # Bear character
+	echo
+	echo -n "  ʕ•ᴥ•ʔ <( " && echo -n "${LINE_TEXT}" | trim | typing && echo " )"
+	echo
+	;;
+"c") # command (pass any arg to skip execution)
+	IFS='✂︎' read -rA segments <<<"$LINE_TEXT"
+	echo "●"
+	echo "│"
+	echo -n "└"
+
+	if [ "${segments[2]}" != "" ]; then
+		echo -n "\e[38;5;214m 〉\e[38;5;255m" && echo -n "${segments[2]}" | trim | typing
+	else
+		echo -n "\e[38;5;214m 〉\e[38;5;255m" && echo -n "${segments[1]}" | trim | typing
+	fi
+
+	if [ "$2" = "" ]; then
+		echo -n " ⚡️\n"
+		echo
+		sleep 1
+		bash -c "$(join_by '&&' "${segments[@]}")"
+	fi
+	echo
+	;;
+"d") # dude character
+	[ -z "$2" ] && declare -a eyes=("⊙" "⊙") || IFS='~' read -rA eyes <<<"$2"
+	[ -z "$3" ] && declare -a face=("_" "ʖ") || IFS='~' read -rA face <<<"$3"
+
+	echo "    ┌──┐  "
+	echo "   ─┴──┴─ "
+	echo -n "  ʕ|${eyes[1]}${face[1]}${face[2]}${eyes[2]}|ʔ <( " && echo -n "${LINE_TEXT}" | trim | typing && echo " )"
+	echo
+	;;
+"e") # expect tcl oneliner
+	expect -c "${LINE_TEXT}" && clear
+	;;
+"p") # pipe the line to the command
+	shift
+	echo -n "${LINE_TEXT}" | "$@"
+	;;
+"t") # Title
+	toilet -t -f pagga -S -F border "${LINE_TEXT}" | trim | lolcat
+	;;
+"s") # Scene
+	export SCENE=$((SCENE + 1))
+
+	# shellcheck source=/dev/null
+	source "$SCENE_PREFIX$SCENE"
+	;;
+esac

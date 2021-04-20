@@ -1,0 +1,22 @@
+\e[38;5;214mHello, world!\e[38;5;255m
+\e[38;5;214mIn this \e[38;5;196mCLIPS\e[38;5;214m episode we gonna learn how to quit \e[38;5;40mvim\e[38;5;214m \e[38;5;255m
+=========  QUITTING VIM  ========
+\e[38;5;214mSurprisingly enough, quitting \e[38;5;40mvim\e[38;5;214m could be a dreadful matter for a novice \e[38;5;255m
+\e[38;5;214mIf you just launched \e[38;5;40mvim\e[38;5;214m and want to quit immediately... \e[38;5;255m
+\e[38;5;214mThe easiest way out is pressing \e[38;5;196mESC\e[38;5;214m then literally typing \e[38;5;196m:q\e[38;5;214m and pressing \e[38;5;196mEnter\e[38;5;214m \e[38;5;255m
+\e[38;5;214m\e[38;5;196m:\e[38;5;214m here activates so called \e[38;5;40mcommand mode\e[38;5;214m and \e[38;5;196mq\e[38;5;214m simply means \e[38;5;40mquit\e[38;5;214m \e[38;5;255m
+\e[38;5;227m💡 DID YOU KNOW? :: Exiting \e[38;5;40mvim\e[38;5;227m is one of the most popular \e[38;5;40mvim\e[38;5;227m requests.\e[38;5;255m
+\e[38;5;227m☝️  And that is despite the fact that \e[38;5;40mvim\e[38;5;227m's splash screen has the exact instructions! 😅 \e[38;5;255m
+spawn vim; interact timeout 1 return; sleep 3; send "\x1b:q"; interact timeout 1 return; sleep 1; send "\n"; puts \033\[1J; exit;
+\e[38;5;214mAs with anything in \e[38;5;40mvim\e[38;5;214m there is an excellent help section \e[38;5;196m:help :q\e[38;5;214m\e[38;5;255m
+spawn vim; interact timeout 1 return; sleep 2; send "\x1b:help :q"; interact timeout 1 return; sleep 1; send "\n"; interact timeout 1 return; send -- "}"; sleep 1; interact timeout 1 return; send -- "}}}"; interact timeout 1 return; send -- "}}}"; interact timeout 1 return; send ":qa"; interact timeout 2 return; send "n"; exit;
+\e[38;5;214mBut, in your day-to-day usage you need to know just a couple of commands: \e[38;5;196m:xa\e[38;5;214m and \e[38;5;196m:qa!\e[38;5;255m
+\e[38;5;214m\e[38;5;196m:xa\e[38;5;214m allows you to save all the changes you've made in all the files and exit.\e[38;5;255m
+VPWD=$(pwd) && vim() { /usr/bin/vim -u $VPWD/assets/clips.vim $@; } && cd /tmp ✂ vim test.txt hello.txt
+cd /tmp ✂ cat test.txt hello.txt
+\e[38;5;214m\e[38;5;196m:qa!\e[38;5;214m allows you to abandon all the changes you've made in all the files and exit.\e[38;5;255m
+VPWD=$(pwd) && vim() { /usr/bin/vim -u $VPWD/assets/clips.vim $@; } && cd /tmp ✂ vim test.txt hello.txt
+cd /tmp ✂ cat test.txt hello.txt ✂ rm -f test.txt hello.txt
+\e[38;5;214mAs you can see, no changes were saved ☝️\e[38;5;255m
+\e[38;5;227m\e[38;5;196mTHANK YOU!\e[38;5;227m To learn more :: Visit this episode's page.\e[38;5;255m
+==========   THE END   ===========

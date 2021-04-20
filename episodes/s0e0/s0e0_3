@@ -1,0 +1,13 @@
+# n s 3 16
+n d
+n c _
+n a
+n a
+n a
+n b
+n d
+sleep 2
+clear
+n t
+sleep 2
+clear

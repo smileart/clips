@@ -1,0 +1,23 @@
+\e[38;5;214mHello, world! \e[38;5;255m
+\e[38;5;214mThis is a demo of \e[38;5;196mCLIPS\e[38;5;214m "framework". \e[38;5;255m
+\e[38;5;214m\e[38;5;196mCLIPS\e[38;5;214m is a stateful "echo" command on steroids, to "play" my eponymous GIF-cast scenarios. \e[38;5;255m
+\e[38;5;214mLet me show you what \e[38;5;196mCLIPS\e[38;5;214m is capable of \e[38;5;255m
+=========   DEMO TIME   =========
+\e[38;5;214m First, we source a "\e[38;5;40mstart\e[38;5;214m" script \e[38;5;255m
+source ./start ./scenarios/s0e1.txt ./episodes/s0e1/s0e1_
+\e[38;5;221m           ───┬───  ──────────┬──────── ───────────┬─────────\e[38;5;255m
+\e[38;5;221m              │               │                    └──── ✂︎ the episodes path and filename prefix\e[38;5;255m
+\e[38;5;221m              │               └──── ✂︎ the scenario to play (line-by-line)\e[38;5;255m
+\e[38;5;221m              └─── ✂︎ the initialisation command (resets the scenario line number, sets "n" as an alias)\e[38;5;255m
+\e[38;5;214m Then we use "\e[38;5;40mnext\e[38;5;214m" command to print the next line of the scenario\e[38;5;255m
+next
+\e[38;5;221m    ──┬──\e[38;5;255m
+\e[38;5;221m      └─── ✂︎ the one without any arguments works just as usual \e[38;5;40mecho\e[38;5;214m...\e[38;5;255m
+\e[38;5;214m The "magic" happens when we use it with an argument! \e[38;5;255m
+n b
+\e[38;5;221m    ┬ ┬\e[38;5;255m
+\e[38;5;221m    │ └──── ✂︎ "\e[38;5;40mb\e[38;5;214m" here stands for "bear" (as in Bear the character)\e[38;5;255m
+\e[38;5;221m    └─── ✂︎ \e[38;5;40mn\e[38;5;214m is an alias for \e[38;5;40mnext\e[38;5;214m, initialised by the \e[38;5;40mstart\e[38;5;214m command \e[38;5;255m
+\e[38;5;214m Lo and behold: it prints the next line as Bear's cue :)\e[38;5;255m
+\e[38;5;214m If you're interested in other arguments, read the README.md from project's GitHub repo!\e[38;5;255m
+==========   THE END   ===========

@@ -1,0 +1,8 @@
+alias n="source ./next"
+export LINE=0
+export SCRIPT_PATH=$(realpath $1)
+
+if [ "$2" != "" ]; then
+  export SCENE=0
+  export SCENE_PREFIX=$(realpath $2)
+fi

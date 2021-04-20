@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+cat ./assets/banner.txt | lolcat
+sleep 5
+clear
