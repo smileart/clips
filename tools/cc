@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+code="$1"
+text="$2"
+end=$(( ${#code} - 2 ))
+
+if [[ "${code:0:1}" != "b" ]]; then echo -n "\e[38;2"; else echo -n "\e[48;2"; fi
+for i in $(seq 1 2 $end); do
+  echo -n ";$(( 16#${code:$i:2} ))"
+done
+
+echo -n "m$text"

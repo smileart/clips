@@ -1,4 +1,5 @@
 se nocp
+set t_ut=""
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/gruvbox/colors/gruvbox.vim'
 runtime plugin/netrwPlugin.vim
 if exists('g:loaded_rstacruz_vim_opinion') || &compatible

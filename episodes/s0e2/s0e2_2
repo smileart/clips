@@ -1,0 +1,23 @@
+# n s 2 18
+n t
+n d
+sleep 3
+n k
+n a
+n a
+n b
+sleep 2
+n k
+n a
+n a
+n k
+n a
+n a
+n k
+n a
+n a
+echo ""
+sleep 5
+echo ""
+n d
+n y

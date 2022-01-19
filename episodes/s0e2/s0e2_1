@@ -1,0 +1,24 @@
+# n s 1 1
+./banner
+n d
+n d
+sleep 3
+clear
+n t
+n d
+n k
+n a
+n a
+n k
+n a
+n a
+n k
+n a
+n a
+n k
+n a
+n a
+echo ""
+sleep 5
+n y
+clear

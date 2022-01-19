@@ -1,0 +1,20 @@
+PS1="\[\e[38;5;214m\]$(tput bold)~/clips\n\[\e[0m\]\[\e[38;5;202m\]❯ \[\e[0m\]" # Bash only
+
+export EDITOR=vim
+bindkey \^U backward-kill-line # ZSH Only
+git clone --depth 1 https://github.com/morhetz/gruvbox ~/.vim/pack/vendor/start/gruvbox
+alias vim='source "/Users/smileart/.vim/pack/vendor/start/gruvbox/gruvbox_256palette.sh" && vim -u ~/vim.min'
+
+source start ./scenarios/s0e2.txt ./episodes/s0e2/s0e2_
+
+n s
+<manually demo the navigation>
+n s
+<manually demo the edits>
+n s
+<manually demo the Alt+.>
+n y
+<manually demo the Alt+t>
+n y
+<paste and manually demo the Ctrl+x+e>
+n s

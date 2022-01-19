@@ -1,0 +1,32 @@
+This is an echo test!
+
+\e[38;2;213;108;163mThis is a typing effect test!\e[38;2;255;255;255m
+_
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+a
+\e[38;5;221m           └──── ✂︎ this is an annotation test\e[38;5;255m
+a
+\e[38;2;98;6;225mThis is a bear test\e[38;2;255;255;255m
+b
+\e[38;2;255;94;80mThis is a Dude test\e[38;2;255;255;255m
+d
+\e[38;2;254;120;16mThis is a half custom Dude test\e[38;2;255;255;255m
+d ಠ~ಠ
+\e[38;2;29;179;100mThis is a fully custom Dude test\e[38;2;255;255;255m
+d °~° ⎵~⌡
+\e[38;2;243;212;3mThis is a space replacement Dude test\e[38;2;255;255;255m
+d x~x ␠~ʖ
+Cmd+Ctrl+Shift+4
+k
+This is a pipe test
+p cowsay -f udder
+This is a title test
+t
+clear && sleep 2 # this is a passive command test
+c _
+clear && sleep 2 # this is an active command test
+c
+send "This is expect test"; sleep 3;
+e
+# This is a yank test
+y

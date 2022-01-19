@@ -1,0 +1,53 @@
+\e[38;5;214mHello, world!\e[38;5;255m
+\e[38;5;214mIn this \e[38;5;196mCLIPS\e[38;5;214m episode we gonna learn useful bash hotkeys\e[38;5;255m
+======== BASH HOTKEYS =========
+\e[38;5;214mThe first group is related to navigation...\e[38;5;255m
+Ctrl+a
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ moves the cursor to the \e[38;5;196mbeginning\e[38;5;221m of the line\e[38;5;255m
+Ctrl+e
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ moves the cursor to the \e[38;5;196mend\e[38;5;221m of the line\e[38;5;255m
+Alt+b
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ moves the cursor one word \e[38;5;196mbackwards\e[38;5;255m
+Alt+f
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ moves the cursor one word \e[38;5;196mforward\e[38;5;255m
+openssl dgst -sha256 next
+======== BASH HOTKEYS =========
+\e[38;5;214mThe next group is responsible for cutting/pasting the commands...\e[38;5;255m
+Ctrl+u
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ cuts everything from the cursor position to the \e[38;5;196mbeginning\e[38;5;221m of the line\e[38;5;255m
+\e[38;2;254;233;83mA little hint\e[38;2;255;255;255m: to make it work like this in ZSH configure \e[38;2;79;188;241mbindkey \^U backward-kill-line\e[38;2;255;255;255m
+Ctrl+k
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ cuts everything from the cursor position to the \e[38;5;196mend\e[38;5;221m of the line\e[38;5;255m
+Ctrl+w
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ cuts one previous word at a time\e[38;5;255m
+Ctrl+y
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ pastes whatever you cut before to to the current cursor position\e[38;5;255m
+\e[38;5;214mLet's see it in action...\e[38;5;255m
+openssl dgst -sha256 next
+======== BASH HOTKEYS =========
+\e[38;5;214mIn this last section we gonna learn a few advanced tricks...\e[38;5;255m
+\e[38;2;254;233;83mBTW\e[38;2;255;255;255m: you might have already noticed that \e[38;2;79;188;241mCtrl+l\e[38;2;255;255;255m clears the screen!\e[38;2;255;255;255m
+Alt+.
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ is another one of those neat little hotkeys which passes the \e[38;5;196mlast word\e[38;5;221m from the previous command\e[38;5;255m
+Alt+t
+\e[38;5;221m   ────────┬────────\e[38;5;255m
+\e[38;5;221m           └──── ✂︎ swaps the current word with the previous one\e[38;5;255m
+Ctrl+x+e
+\e[38;5;221m   ────────────┬────────────\e[38;5;255m
+\e[38;5;221m               └──── ✂︎ a cool escape hatch which allows you to edit the command in your preferred \e[38;2;79;188;241m$EDITOR\e[38;2;255;255;255m\e[38;5;255m
+\e[38;5;214mOk, now let's try to use them...\e[38;5;255m
+fat ./episodes/s0e2/cue.txt
+echo world Hello
+cat ./episodes/s0e2/curl.txt | pbcopy
+\e[38;5;196mWARNING\e[38;2;255;255;255m: in bash the edited command gets executed on exit!!! To avoid it in vim use \e[38;2;79;188;241m:cq\e[38;2;255;255;255m
+\e[38;5;227mThat's it for today.\e[38;5;196m THANK YOU! ♡ \e[38;5;227m  To learn more :: Visit this episode's page.\e[38;5;255m
+==========   THE END   ===========
