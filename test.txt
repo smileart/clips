@@ -8,6 +8,8 @@ a
 a
 \e[38;2;98;6;225mThis is a bear test\e[38;2;255;255;255m
 b
+ʕ•́ᴥ•̀ʔっ✂︎\e[38;2;98;6;225mThis is a custom Bear test\e[38;2;255;255;255m
+b _
 \e[38;2;255;94;80mThis is a Dude test\e[38;2;255;255;255m
 d
 \e[38;2;254;120;16mThis is a half custom Dude test\e[38;2;255;255;255m
